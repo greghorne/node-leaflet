@@ -1,7 +1,6 @@
 var express = require('express');
 var app     = express();
 
-
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -9,6 +8,11 @@ app.set('view engine', 'ejs');
 // index page
 app.get('/', function(req, res) {
 	res.render('pages/index');
+});
+
+// about page
+app.get('/about', function(req, res) {
+	res.render('pages/about');
 });
 
 app.get('/', function (req, res) {
@@ -20,7 +24,7 @@ app.get('/', function (req, res) {
     }).addTo(map);
 
     res.statusCode = 200;
-    res.end('app root');
+    res.end();
 });
 
 var server = app.listen(process.env.APP_PORT, process.env.APP_HOST, function () {
