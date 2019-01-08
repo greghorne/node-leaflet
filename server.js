@@ -16,13 +16,6 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/', function (req, res) {
-
-    L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        minZoom:  5,
-        maxZoom: 17,
-    }).addTo(map);
-
     res.statusCode = 200;
     res.end();
 });
