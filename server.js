@@ -11,15 +11,14 @@ app.get('/', function(req, res) {
 });
 
 // about page
-app.get('/about', function(req, res) {
-	res.render('pages/about');
-});
+// app.get('/about', function(req, res) {
+// 	res.render('pages/about');
+// });
 
-app.get('/', function (req, res) {
-    
-    res.statusCode = 200;
-    res.end();
-});
+// app.get('/', function (req, res) {
+//     res.statusCode = 200;
+//     res.end();
+// });
 
 var server = app.listen(process.env.APP_PORT, process.env.APP_HOST, function () {
    console.log("App listening at http://%s:%s", server.address().address, server.address().port)
