@@ -2,25 +2,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-<script src="./js/constants.js"></script>
 
 <script>
 
     $(document).ready(function() {
 
-        
-        
+        // retrieve base map settings
         $.ajax({ type: "GET", url: "/initmap" }).done(function(response){
 
+            // parse map settings
             var json = JSON.parse(response)
     
+            // instantiate map
             var map = L.map('map').setView([json.latitudeY, json.longitudeX], json.zoom);
-        
-            var osmMapTileLayer = L.tileLayer(
+            var myMapTileLayer = L.tileLayer(
                 json.url, 
                 { maxZoom: json.maxZoom, attribution: json.attribution }
             ).addTo(map);
           
+            // display map zoom and center (x,y)
             map.on('moveend', function () {
                 console.log("zoom: " + map.getZoom() + "  " + map.getCenter());
             });
