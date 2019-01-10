@@ -28,9 +28,9 @@ app.get('/initmap', function(req, res) {
         "url":          CONST_MAP_URL,
         "attribution":  CONST_MAP_ATTRIBUTION,
         "maxZoom":      CONST_MAP_MAX_ZOOM,
-        "latitudeY":    CONST_MAP_LATITUDEY,
-        "longitudeX":   CONST_MAP_LONGITUDEX,
-        "zoom":         CONST_MAP_DEFAULT_ZOOM
+        "latitudeY":    CONST_MAP_CENTER_LATITUDEY,
+        "longitudeX":   CONST_MAP_CENTER_LONGITUDEX,
+        "zoom":         CONST_MAP_INITIAL_ZOOM
     }
     res.end(JSON.stringify(json))
 
