@@ -6,3 +6,5 @@ Tech Stack:
 - Node
 - Express
 - EJS
+- JavaScript
+- Leaflet.JS
