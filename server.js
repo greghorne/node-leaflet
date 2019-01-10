@@ -1,4 +1,18 @@
 // init app
+
+// function include(file) {
+//     var script = $(document).createElement('script');
+//     script.src = file;
+//     script.type = 'text/javascript';
+//     script.defer = true;
+
+//     document.getElementsByTagName('head').item(0).appendChild(scipt);
+// }
+
+
+
+
+
 var express = require('express');
 var app     = express();
 
@@ -8,6 +22,21 @@ app.set('view engine', 'ejs');
 // use res.render to load up an ejs view file index page
 app.get('/', function(req, res) {
 	res.render('pages/index');
+});
+
+app.get('/initmap', function(req, res) {
+    require("./js/constants.js")
+
+    console.log("trace...")
+    var json = {
+        "url": CONST_MAP_URL,
+        "attribution":  CONST_MAP_ATTRIBUTION,
+        "maxZoom":      CONST_MAP_MAX_ZOOM,
+        "latitudeY":    CONST_MAP_LATITUDEY,
+        "longitudeX":   CONST_MAP_LONGITUDEX,
+        "zoom":         CONST_MAP_DEFAULT_ZOOM
+    }
+    res.end(JSON.stringify(json))
 });
 
 // about page
