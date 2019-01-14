@@ -18,6 +18,10 @@ app.get('/', function(req, res) {
 });
 //////////////////////////////////////////////////
 
+app.get('/about', function(req, res) {
+    res.render('pages/about');
+})
+
 
 //////////////////////////////////////////////////
 // return initial base map settings from constants.js

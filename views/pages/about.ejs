@@ -1,42 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <% include ../partials/head %>
-</head>
+  <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <% include ../partials/head %>
+  </head>
 
-<body class="container">
+  <body>
 
-  <header>
-    <% include ../partials/header %>
-  </header>
+    <header id="header">
+      <% include ../partials/header %>
+    </header>
 
-  <main>
-    <div class="row">
-      <div class="col-sm-8">
+    <main id="main">
+      <!-- <div id="map"></div> -->
+    </main>
 
+    <footer id="footer">
+      <% include ../partials/footer %>
+    </footer>
 
-      </div>
-      <div class="col-sm-4">
-
-        <div class="well">
-          <h3>leaflet Map</h3>
-          <ul>
-            <li>leaflet</li>
-            <li>express</li>
-            <li>ejs</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <% include ../partials/footer %>
-  </footer>
-
-  <% include ../partials/scripts %>
-</body>
+    <% include ../partials/scripts %>
+  </body>
 
 </html>
